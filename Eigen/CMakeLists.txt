@@ -25,9 +25,10 @@ INCLUDE(${QT_USE_FILE})
 message(STATUS ${QT_USE_FILE})
 endif()
 
-
+find_package(Eigen3 REQUIRED)
 include_directories(
-    /usr/include/eigen3/    # 若你的Eigen不是这个目录，请把此目录改为你的位置
+    ${EIGEN3_INCLUDE_DIR}
+#    /usr/local/Cellar/eigen/3.3.7/include/eigen3  # 若你的Eigen不是这个目录，请把此目录改为你的位置
     ./Chapter1_DenseMatrixAndArray/
     ./Chapter2_DenseLinearProblemsAndDecompositions/
     ./Chapter3_SparseLinearAlgebra/
